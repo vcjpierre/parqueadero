@@ -166,6 +166,6 @@ schema.sql             # Esquema, vistas, procedimiento y datos seed
 - UI: Frontend migrado completamente a React, con rutas SPA protegidas y módulos de Dashboard, Vehículos, Ingreso/Salida, Configuración, Tarifas, Usuarios y Reportes.
 
 ### Licencia
-ISC © Ciscode
+ISC ©
 
 
