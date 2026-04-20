@@ -4,6 +4,7 @@
   "description": "Sistema de gestión de parqueadero",
   "main": "src/server.js",
   "scripts": {
+    "postinstall": "npm --prefix frontend ci",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "dev:all": "concurrently -n backend,frontend -c green,blue \"npm run dev\" \"npm run frontend:dev:wait\"",
@@ -14,13 +15,14 @@
     "build:clean": "rimraf dist && mkdirp dist",
     "build:exe": "pkg src/server.js --targets node18-win-x64 --output dist/parqueadero.exe",
     "build:copy": "cpy \"public/**\" dist/public --cwd=. --parents && cpy schema.sql .env* dist/ --cwd=.",
-    "build": "npm run frontend:build && npm run build:clean && npm run build:exe && npm run build:copy"
+    "build": "npm run frontend:build",
+    "build:windows-exe": "npm run frontend:build && npm run build:clean && npm run build:exe && npm run build:copy"
   },
   "keywords": [],
   "author": "Cristian Cano",
   "license": "ISC",
   "engines": {
-    "node": ">=18"
+    "node": ">=22.12.0"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

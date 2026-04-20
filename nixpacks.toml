@@ -1,0 +1,14 @@
+[phases.install]
+cmds = [
+  "npm ci",
+  "npm --prefix frontend ci",
+]
+
+[phases.build]
+cmds = [
+  "npm run frontend:build",
+]
+
+[start]
+cmd = "node src/server.js"
+
